@@ -18,7 +18,7 @@ function App() {
                 shadowBlur={2}
                 fill={Konva.Util.getRandomColor()}
               />
-            )
+            )x
           })}
         </Layer>
       </Stage>

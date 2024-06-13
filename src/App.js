@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { Stage, Layer, Rect, Text, } from 'react-konva';
+import Konva from 'konva';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Stage width={window.innerWidth} height={window.innerHeight}>
+        <Layer>
+          {[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map(() => {
+            return (
+              <Rect
+                x={Math.round(Math.random() * 1000)}
+                y={Math.round(Math.random() * 500)}
+                width={200}
+                height={200}
+                shadowBlur={2}
+                fill={Konva.Util.getRandomColor()}
+              />
+            )
+          })}
+        </Layer>
+      </Stage>
     </div>
+
   );
 }
 
